@@ -1,0 +1,15 @@
+<p-accordion [multiple]="true">
+    <p-accordionTab [header]="person.firstName" *ngFor="let person of people">
+        <div class="person-details">
+            <div>
+                <label>Full Name:</label> {{person.firstName}} {{person.lastName}}
+            </div>
+            <div>
+                <label>Email:</label> {{person.email}}
+            </div>
+            <div>
+                <label>Activity:</label> {{person.activity}}
+            </div>            
+        </div>
+    </p-accordionTab>
+</p-accordion>

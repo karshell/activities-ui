@@ -1,0 +1,39 @@
+<div class="container">
+    <form #entryForm="ngForm" (submit)="register();">
+
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input [(ngModel)]="model.firstName" type="text" class="form-control" id="firstName" name="firstName" required #firstName="ngModel">
+            <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
+                First Name is Required
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input [(ngModel)]="model.lastName" type="text" class="form-control" id="lastName" name="lastName" required #lastName="ngModel">
+            <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">
+                Last Name is Required
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input [(ngModel)]="model.email" type="text" class="form-control" id="email" name="email" required #email="ngModel">
+            <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                Email is Required
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label for="activity">Activity</label>
+            <input [(ngModel)]="model.activity" type="text" class="form-control" id="activity" name="activity" required #activity="ngModel">
+            <div [hidden]="activity.valid || activity.pristine" class="alert alert-danger">
+                An Activity is Required
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success" [disabled]="!entryForm.form.valid">Submit</button>
+
+    </form>
+</div>
