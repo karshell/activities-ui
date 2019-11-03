@@ -2,11 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EntryFormComponent } from './entry-form/entry-form.component';
-import { PersonListComponent } from './person-list/person-list.component';
+import { EntryFormComponent } from './components/entry-form/entry-form.component';
+import { PersonListComponent } from './components/person-list/person-list.component';
 import { AccordionModule } from 'primeng/accordion';
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AccordionModule } from 'primeng/accordion';
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    AccordionModule
+    AccordionModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

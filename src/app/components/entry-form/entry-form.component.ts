@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Person } from '../models/person';
+import { Person } from '../../models/person';
+import { PersonService } from 'src/app/services/person-service.service';
 
 @Component({
   selector: 'app-entry-form',
@@ -11,14 +12,15 @@ export class EntryFormComponent {
 
   private model: Person;
 
-  constructor() {
+  constructor(private personService: PersonService) {
     this.registration = new EventEmitter();
     this.model = new Person();
   }
 
   private register() {
-    // todo: call registration api
-    this.registration.emit();
+    this.personService.createPerson(this.model).subscribe(
+      result => this.registration.emit()
+    );
   }
 
 }

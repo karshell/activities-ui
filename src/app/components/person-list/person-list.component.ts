@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Person } from '../models/person';
+import { Person } from '../../models/person';
+import { PersonService } from 'src/app/services/person-service.service';
 
 @Component({
   selector: 'app-person-list',
@@ -9,14 +10,11 @@ import { Person } from '../models/person';
 export class PersonListComponent implements OnInit {
   private people: Person[];
 
-  constructor() { }
+  constructor(private personService: PersonService) { }
 
   ngOnInit() {
-    // todo: retrieve list of people from service
-    this.people = [
-      new Person('Kevin', 'Shelley', 'test@assd.asd', 'activity1'),
-      new Person('Kevin', 'Shelley', 'test@assd.asd', 'activity2')
-    ];
+    this.personService.getPeople().subscribe(
+      result => this.people = result
+    );
   }
-
 }

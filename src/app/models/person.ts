@@ -3,6 +3,7 @@ export class Person {
         public firstName: string = '',
         public lastName: string = '',
         public email: string = '',
-        public activity: string = ''
+        public activity: string = '',
+        public comments: string = ''
     ) { }
 }
