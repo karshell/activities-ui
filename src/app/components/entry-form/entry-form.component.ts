@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { Person } from '../../models/person';
 import { PersonService } from 'src/app/services/person-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-entry-form',
@@ -8,18 +9,16 @@ import { PersonService } from 'src/app/services/person-service.service';
   styleUrls: ['./entry-form.component.scss']
 })
 export class EntryFormComponent {
-  @Output() registration: EventEmitter<any>;
 
   private model: Person;
 
-  constructor(private personService: PersonService) {
-    this.registration = new EventEmitter();
+  constructor(private personService: PersonService, private router: Router) {
     this.model = new Person();
   }
 
   private register() {
     this.personService.createPerson(this.model).subscribe(
-      result => this.registration.emit()
+      result => this.router.navigateByUrl('/list')
     );
   }
 

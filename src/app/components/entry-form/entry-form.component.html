@@ -1,3 +1,6 @@
+<div class="page-header">
+  <h1>Activity Registration</h1>
+</div>
 <div class="container">
     <form #entryForm="ngForm" (submit)="register();">
 
@@ -5,7 +8,7 @@
             <label for="firstName">First Name</label>
             <input [(ngModel)]="model.firstName" type="text" class="form-control" id="firstName" name="firstName" required #firstName="ngModel">
             <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
-                First Name is Required
+                Please enter a first name
             </div>
         </div>
 
@@ -13,15 +16,15 @@
             <label for="lastName">Last Name</label>
             <input [(ngModel)]="model.lastName" type="text" class="form-control" id="lastName" name="lastName" required #lastName="ngModel">
             <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">
-                Last Name is Required
+                Please enter a last name
             </div>
         </div>
     
         <div class="form-group">
             <label for="email">Email</label>
-            <input [(ngModel)]="model.email" type="text" class="form-control" id="email" name="email" required #email="ngModel">
+            <input [(ngModel)]="model.email" type="text" class="form-control" id="email" name="email" required [email]="true" #email="ngModel">
             <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
-                Email is Required
+                Please enter a valid email
             </div>
         </div>
     
@@ -29,13 +32,13 @@
             <label for="activity">Activity</label>
             <input [(ngModel)]="model.activity" type="text" class="form-control" id="activity" name="activity" required #activity="ngModel">
             <div [hidden]="activity.valid || activity.pristine" class="alert alert-danger">
-                An Activity is Required
+                Please enter an activity
             </div>
         </div>
 
         <div class="form-group">
             <label for="activity">Comments</label>
-            <textarea [(ngModel)]="model.comments" type="text" class="form-control ng-valid" id="activity" name="activity" #activity="ngModel"></textarea>
+            <textarea [(ngModel)]="model.comments" type="text" class="form-control" id="comments" name="comments" #comments="ngModel"></textarea>
         </div>
 
         <button type="submit" class="btn btn-success" [disabled]="!entryForm.form.valid">Submit</button>

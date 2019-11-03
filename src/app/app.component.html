@@ -1,4 +1,3 @@
 <div class="mainpane">
-  <app-entry-form *ngIf="!registered" (registration)="registered = true;" class="full-width"></app-entry-form>
-  <app-person-list *ngIf="registered" class="full-width"></app-person-list>
+  <router-outlet></router-outlet>
 </div>

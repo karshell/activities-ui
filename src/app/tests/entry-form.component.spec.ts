@@ -1,6 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { EntryFormComponent } from '../entry-form/entry-form.component';
+import { EntryFormComponent } from '../components/entry-form/entry-form.component';
 
 describe('EntryFormComponent', () => {
   let component: EntryFormComponent;
