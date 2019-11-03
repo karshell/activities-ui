@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { PersonListComponent } from '../person-list/person-list.component';
+import { PersonListComponent } from '../components/person-list/person-list.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('PersonListComponent', () => {
   let component: PersonListComponent;
@@ -8,7 +9,10 @@ describe('PersonListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PersonListComponent ]
+      declarations: [ PersonListComponent ],
+      schemas: [NO_ERRORS_SCHEMA],
+      imports: [HttpClientModule],
+      providers: [HttpClientModule]
     })
     .compileComponents();
   }));

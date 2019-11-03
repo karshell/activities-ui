@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { EntryFormComponent } from '../components/entry-form/entry-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('EntryFormComponent', () => {
   let component: EntryFormComponent;
@@ -7,7 +10,9 @@ describe('EntryFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EntryFormComponent ]
+      declarations: [ EntryFormComponent ],
+      imports: [HttpClientModule, FormsModule, RouterTestingModule],
+      providers: [HttpClientModule, FormsModule]
     })
     .compileComponents();
   }));
